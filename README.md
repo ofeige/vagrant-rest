@@ -70,6 +70,8 @@ Please don´t forget to run ```vagrant provision``` after you change the templat
 
 If you want to connect to mysql from your host system you have to use the mysql password! If you want to connect from your vagrant environment you have to add "-h 127.0.0.1"
 
+Port 80 connect to varnish and Port 8080 directly to your project without caching
+
 Change Log
 ==========
 13 November 2014
@@ -99,3 +101,8 @@ First release for this project
 - fix plugin name vagrant-hostmanager instead of vagrant-hostmaster
 - fix vagrant 1.8.1 problem with chef_zero config option. solution was using chef_solo
 - .local is a official domain now. removed the toplevel domain
+
+10 December 2016
+- updated all cookbooks to the latest version
+- updated to centos 7.2
+- add varnish for caching
