@@ -46,14 +46,14 @@ Config Option
 You can setup dedicated virtual hosts, when you change following line
 
 ```
-node.hostmanager.aliases = %w(www.project1.local www.project2.local)
+node.hostmanager.aliases = %w(rest-demo)
 ```
 
 and
 
 ```
 :lamp  => {
-  vhosts: [ "project1.local", "project2.local" ]
+  vhosts: [ "rest-demo" ]
 }
 ```
 
