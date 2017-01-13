@@ -1,15 +1,15 @@
-vagrant-centos-chef-lamp
-========================
+Vagrant-Rest
+============
 
-A lamp stack with chef, centos 7.0, vagrant, nginx, php-7.0, php-fpm, mysql 5.7 and composer. But instead of using apache, I switched to nginx
+A lamp stack with chef, centos 7.0, vagrant, nginx, php-7.0, php-fpm, mysql 5.7 and composer. But instead of using apache, I switched to nginx.
 
 Install
 =======
 
 1. choose your virtualization product
- - install virtual-box >= 4.3.16
+ - install virtual-box >= 5.0.24
  - install parallels 10
-2. install vagrant >= 1.6.5 (http://www.vagrantup.com/downloads.html) I suggest to install the latest version. I tested this  project only with version 1.7.3
+2. install vagrant = 1.8.7
 3. install the necessary plugins for vagrant, if not yet happened
  ```
  vagrant plugin install vagrant-hostmanager
@@ -18,7 +18,7 @@ Install
 
  Hostmaster is needed to add/remove entries in your local /etc/hosts file. To support development domains
  Cachier is needed to prevent downloading rpm´s again. This is usefull during setting up a vm, when you have online internet  via cellphone like inside a train :-)
- 
+
  If you're using parallels you also have to install the vagrant plugin
  ```
  vagrant plugin install vagrant-parallels
@@ -27,7 +27,7 @@ Install
 
 4. do the git stuff
  ```
- git clone https://github.com/ofeige/vagrant-centos-chef-lamp
+ git clone https://github.com/ofeige/vagrant-rest
  cd vagrant-centos-chef-lamp
  ```
 
@@ -72,6 +72,37 @@ If you want to connect to mysql from your host system you have to use the mysql 
 
 Port 80 connect to varnish and Port 8080 directly to your project without caching
 
+Demo application
+================
+
+The following steps will enable you to see a first rest application demo.
+
+1. Clone the rest demo in your vagrant-rest folder
+ ```
+ git clone https://github.com/ofeige/rest-demo
+ ```
+
+2. Setup the demo application
+ ```
+ vagrant ssh
+ cd /vagrant/rest-demo/
+ composer install
+ # just set the database_port: 3306 and the database_password: changeme
+ ```
+
+3. Start the demo application
+ ```
+ cd bin
+ php console doctrine:database:create
+ php console doctrine:schema:create
+ php console server:start
+ ```
+4. Execute the unit tests
+ ```
+ cd /vagrant/rest-demo/
+ vendor/phpunit/phpunit/phpunit
+ ```
+
 Change Log
 ==========
 13 November 2014
@@ -106,3 +137,8 @@ First release for this project
 - updated all cookbooks to the latest version
 - updated to centos 7.2
 - add varnish for caching
+
+13 January 2017
+- improved the README
+- added information about the rest demo application
+- changed virtualbox and vagrant version
