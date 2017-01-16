@@ -28,7 +28,7 @@ Install
 4. do the git stuff
  ```
  git clone https://github.com/ofeige/vagrant-rest
- cd vagrant-centos-chef-lamp
+ cd vagrant-rest
  ```
 
 5. start vagrant with virtual box
@@ -99,8 +99,7 @@ The following steps will enable you to see a first rest application demo.
  ```
 4. Execute the unit tests
  ```
- cd /vagrant/rest-demo/
- vendor/phpunit/phpunit/phpunit
+ cd /vagrant/rest-demo/ && vendor/phpunit/phpunit/phpunit
  ```
 
 Change Log
