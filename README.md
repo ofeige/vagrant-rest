@@ -99,8 +99,7 @@ The following steps will enable you to see a first rest application demo.
  ```
 4. Execute the unit tests
  ```
- cd /vagrant/rest-demo/
- vendor/phpunit/phpunit/phpunit
+ cd /vagrant/rest-demo/ && vendor/phpunit/phpunit/phpunit
  ```
 
 Change Log
