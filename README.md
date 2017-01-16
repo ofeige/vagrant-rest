@@ -28,7 +28,7 @@ Install
 4. do the git stuff
  ```
  git clone https://github.com/ofeige/vagrant-rest
- cd vagrant-centos-chef-lamp
+ cd vagrant-rest
  ```
 
 5. start vagrant with virtual box
