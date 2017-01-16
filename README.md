@@ -14,6 +14,7 @@ Install
  ```
  vagrant plugin install vagrant-hostmanager
  vagrant plugin install vagrant-cachier
+ vagrant plugin install vagrant-winnfsd # only for Windows
  ```
 
  Hostmaster is needed to add/remove entries in your local /etc/hosts file. To support development domains
