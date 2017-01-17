@@ -28,7 +28,7 @@ end
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "bento/centos-7.2"
+  config.vm.box = "bento/centos-7.3"
 
   config.vm.provider "parallels"
   config.vm.provider "virtualbox"
