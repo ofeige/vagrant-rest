@@ -146,4 +146,4 @@ First release for this project
 17 January 2017
 - added Windows support
 - improved plugin handling
-- fixed connection problems with the vagrantbox and virtualbox
+- fixed connection problems with between the vagrantbox and virtualbox
