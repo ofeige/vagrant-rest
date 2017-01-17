@@ -28,11 +28,12 @@ end
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "bento/centos-7.2"
+  config.vm.box = "bento/centos-7.3"
 
   config.vm.provider "parallels"
   config.vm.provider "virtualbox"
 
+  # Check available Plugins
   if !Vagrant.has_plugin?('vagrant-cachier')
       puts "The vagrant-cachier plugin is required. Please install it with \"vagrant plugin install vagrant-cachier\""
       exits
@@ -43,6 +44,18 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       exit
   end
 
+  if OS.windows?      
+      if !Vagrant.has_plugin?('vagrant-winnfsd')         
+          puts "The vagrant-winnfsd plugin is required. Please install it with \"vagrant plugin install vagrant-winnfsd\""   
+          exit
+      end
+  end
+    
+  if Vagrant.has_plugin?('vagrant-vbguest')
+      config.vbguest.auto_update = true
+  end
+    
+  # Configure the VM
   config.cache.scope = :box
 
   config.vm.provider "virtualbox" do |vb|

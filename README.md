@@ -7,13 +7,14 @@ Install
 =======
 
 1. choose your virtualization product
- - install virtual-box >= 5.0.24
+ - install virtual-box >= 5.1.12
  - install parallels 10
 2. install vagrant = 1.8.7
 3. install the necessary plugins for vagrant, if not yet happened
  ```
  vagrant plugin install vagrant-hostmanager
  vagrant plugin install vagrant-cachier
+ vagrant plugin install vagrant-winnfsd # only for Windows
  ```
 
  Hostmaster is needed to add/remove entries in your local /etc/hosts file. To support development domains
