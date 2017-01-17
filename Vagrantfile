@@ -51,6 +51,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       end
   end
     
+  if Vagrant.has_plugin?('vagrant-vbguest')
+      config.vbguest.auto_update = true
+  end
+    
   # Configure the VM
   config.cache.scope = :box
 
