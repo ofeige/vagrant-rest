@@ -142,3 +142,8 @@ First release for this project
 - improved the README
 - added information about the rest demo application
 - changed virtualbox and vagrant version
+
+17 January 2017
+- added Windows support
+- improved plugin handling
+- fixed connection problems with between the vagrantbox and virtualbox
