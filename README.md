@@ -7,9 +7,9 @@ Install
 =======
 
 1. choose your virtualization product
- - install virtual-box >= 5.1.12
- - install parallels 10
-2. install vagrant = 1.8.7
+ - install [virtual-box](https://www.virtualbox.org/wiki/Downloads) >= 5.1.12
+ - install [parallels 10](https://www.parallels.com)
+2. install [vagrant](https://www.vagrantup.com) = [1.8.7](https://releases.hashicorp.com/vagrant/1.8.7/)
 3. install the necessary plugins for vagrant, if not yet happened
  ```
  vagrant plugin install vagrant-hostmanager
